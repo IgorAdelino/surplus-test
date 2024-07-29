@@ -1,7 +1,7 @@
 import { Controller, Get, Headers, Param } from '@nestjs/common';
 import { GetPurchaseOrderService } from '../services/get-purchase-order.service';
 
-@Controller('purchase-order')
+@Controller('purchase-orders')
 export class PurchaseOrderController {
   constructor(private getPurchaseOrderService: GetPurchaseOrderService) {}
 
