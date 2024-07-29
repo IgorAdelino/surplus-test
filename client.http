@@ -1,0 +1,16 @@
+@baseUrl =  http://localhost:3000
+
+# @name login
+POST {{baseUrl}}/acumatica/auth
+Content-Type: application/json
+
+{
+ "name": "Igor Adelino",
+ "password": "123456"
+}
+
+###
+# @name get_purchase_order
+GET {{baseUrl}}/purchase-orders/000062
+Content-Type: application/json
+

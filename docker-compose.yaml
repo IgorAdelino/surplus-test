@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  api_local:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.local
+    container_name: api_local
+    ports:
+      - 3000:3000
+    environment:
+      DATABASE_URL: "postgresql://postgres:docker@postgres:5432"
+    volumes:
+      - .:/usr/app/api
+      - /usr/app/api/node_modules
+    depends_on:
+      - postgres
+
+  postgres:
+    container_name: surplus-db
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: postgres
+      PGDATA: /data/postgres
+    volumes:
+      - ./data/pg:/data/postgres
+
+volumes:
+  pgdata:
+    driver: local
