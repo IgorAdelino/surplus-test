@@ -1,8 +1,13 @@
-.
 ## Installation
 
 ```bash
 $ npm install
+```
+
+## Environment
+
+```bash
+$ create .env
 ```
 
 ## Running the app
