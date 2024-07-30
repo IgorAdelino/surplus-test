@@ -7,6 +7,7 @@ $ npm install
 ## Environment
 
 ```bash
+# copy .env.example
 $ create .env
 ```
 
